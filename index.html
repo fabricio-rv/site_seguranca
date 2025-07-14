@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protepac Segurança Eletrônica | Proteção Inteligente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #1a1970; /* MidnightBlue */
+        color: #ffd700;
+        animation: fadeIn 0.8s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .main-bg {
+        background-color: #1a1970 !important;
+      }
+      .gold-text {
+        color: #ffd700 !important;
+      }
+      .darkorange-text {
+        color: #ff9900 !important;
+      }
+      .midnight-text {
+        color: #1a1970 !important;
+      }
+      .gold-bg {
+        background-color: #ffd700 !important;
+      }
+      .darkorange-bg {
+        background-color: #ff9900 !important;
+      }
+      .midnight-bg {
+        background-color: #1a1970 !important;
+      }
+      .footer-divider {
+        border-top: 1px solid rgba(255, 215, 0, 0.1) !important;
+      }
+      .section-divider {
+        border-top: 1px solid rgba(255, 215, 0, 0.1) !important;
+      }
+      .info-icon {
+        color: #ffd700 !important;
+        margin-right: 8px;
+      }
+      .email-btn {
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+      }
+      .email-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+        background-color: #ff9900 !important;
+        color: #1a1970 !important;
+      }
+      .footer-info-divider {
+        border-right: 1.5px solid #ffd700;
+        height: 20px;
+        margin: 0 16px;
+      }
+      .footer-logo-img {
+        height: 60px;
+        width: auto;
+      }
+      .main-logo-img {
+        height: 85px;
+        width: auto;
+      }
+      a,
+      a:visited {
+        color: #ffd700 !important;
+      }
+    </style>
+  </head>
+  <body class="main-bg">
+    <section class="py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden pb-5 main-bg">
+      <!-- Filtro preto escuro sobre a imagem de fundo -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="imagens/seguranca.png"
+          alt="Background security"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black opacity-80"></div>
+      </div>
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-start relative z-10 h-full pt-6"
+      >
+        <div
+          class="md:w-3/4 mb-10 md:mb-0 md:pr-10 pl-8 sm:pl-14 lg:pl-20 xl:pl-28"
+        >
+          <!-- LOGO NO TOPO (maior) -->
+          <div class="mb-4 pt-2 w-full flex justify-start">
+  <img
+    src="imagens/logo.png"
+    alt="Protepac Logo"
+    class="max-w-[250px] w-full h-auto block"
+    style="max-width: 60%; height: auto;"
+  />
+</div>
+          <h1
+            class="text-4xl md:text-6xl font-bold mb-4 leading-tight gold-text"
+          >
+            Proteja o que mais importa com tecnologia, confiança e tradição.
+          </h1>
+          <p class="block text-[#FF8C00] font-semibold text-xl mb-4">
+            Especialistas em segurança eletrônica desde 2011, com atendimento
+            ágil e soluções personalizadas para sua proteção. Atuamos no Vale 
+            do Taquari e em outras 67 Cidades do Estado.
+          </p>
+          <!-- Botão agora alinhado à esquerda -->
+          <h2 class="text-2xl font-bold mb-6 gold-text" style="text-align:left;">Envie-nos um Email</h2>
+
+<!-- BOTÃO DE COPIAR EMAIL -->
+<button
+  onclick="navigator.clipboard.writeText('financeiro@protepac.com.br'); 
+           this.innerHTML = `<i class='fas fa-check mr-2'></i> Copiado!`;
+           setTimeout(()=>this.innerHTML=`<i class='fas fa-envelope mr-2'></i> Copiar Email`,1500);"
+  class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg mb-2 w-max flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text"
+  style="text-decoration:none;outline:none;border:none;"
+>
+  <i class="fas fa-envelope mr-2"></i> Copiar Email
+</button>
+      </div>
+      </div>
+
+      <!-- CARDS ABAIXO DO EMAIL -->
+  <div class="w-full flex flex-col items-center relative z-10 mt-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-6xl mx-auto">
+      <!-- Monitoramento -->
+      <div class="bg-[#191970] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-12 py-7 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer">
+        <div class="mb-1">
+          <i class="fas fa-shield-alt text-5xl" style="color:#FFD700;"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-2 text-center" style="color:#FFD700;">Monitoramento</h3>
+        <p class="text-center text-base" style="color:#FF9900;">Excelência em equipamentos para monitorar sua propriedade.</p>
+      </div>
+      <!-- Alarme 24h -->
+      <div class="bg-[#191970] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-12 py-7 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer">
+        <div class="mb-3">
+          <i class="fas fa-bell text-5xl" style="color:#FFD700;"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-2 text-center" style="color:#FFD700;">Sistema de Alarme 24h</h3>
+        <p class="text-center text-base" style="color:#FF9900;">Alarmes modernos com monitoramento 24h e contato imediato.</p>
+      </div>
+      <!-- Portaria Virtual -->
+      <div class="bg-[#191970] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-12 py-7 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer">
+        <div class="mb-3">
+          <i class="fas fa-door-open text-5xl" style="color:#FFD700;"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-2 text-center" style="color:#FFD700;">Portaria Virtual</h3>
+        <p class="text-center text-base" style="color:#FF9900;">Controle de acesso inteligente para condomínios e empresas.</p>
+      </div>
+      <!-- Clientes Atendidos -->
+      <div class="bg-[#191970] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-12 py-7 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer">
+        <div class="mb-3">
+          <i class="fas fa-users text-5xl" style="color:#FFD700;"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-2 text-center" style="color:#FFD700;">+1000 Clientes</h3>
+        <p class="text-center text-base" style="color:#FF9900;">Atendendo com excelência e confiança em todo o Brasil.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full max-w-4xl mx-auto mt-16 mb-1 px-4 relative z-10">
+  <h2 class="text-3xl font-bold gold-text mb-6 text-center">Perguntas Frequentes</h2>
+  <div class="space-y-4">
+    <div class="bg-[#191970] border-2 border-[#FFD700] rounded-xl p-5">
+      <h3 class="font-bold gold-text text-lg mb-4">Como funciona o monitoramento 24h?</h3>
+      <p class="text-base text-[#FF9900]">Nossa central monitora seu sistema o tempo todo. Ao detectar qualquer evento, nossa equipe age rapidamente, entrando em contato e tomando as providências necessárias.</p>
+    </div>
+    <div class="bg-[#191970] border-2 border-[#FFD700] rounded-xl p-5">
+      <h3 class="font-bold gold-text text-lg mb-4">Em quanto tempo realizam a instalação?</h3>
+      <p class="text-base text-[#FF9900]">Após a confirmação do pedido, agendamos a instalação para o mais breve possível compativel com o nosso agendamento.</p>
+    </div>
+    <div class="bg-[#191970] border-2 border-[#FFD700] rounded-xl p-5">
+      <h3 class="font-bold gold-text text-lg mb-4">Oferecem suporte técnico após a instalação?</h3>
+      <p class="text-base text-[#FF9900]">Sim! Nosso suporte está disponível para dúvidas, manutenção e eventuais ajustes no sistema a qualquer momento.</p>
+    </div>
+    <div class="bg-[#191970] border-2 border-[#FFD700] rounded-xl p-5">
+      <h3 class="font-bold gold-text text-lg mb-4">Quais regiões atendem?</h3>
+      <p class="text-base text-[#FF9900]">Atuamos no Vale do Taquari, Teutônia, Lajeado e mais de 67 cidades do estado do RS.</p>
+    </div>
+  </div>
+</div>
+
+    </section>
+
+    <footer class="bg-black footer-divider py-4 px-4 sm:px-8 mt-0">
+  <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start">
+    <!-- Logo -->
+    <div class="flex flex-col items-center md:items-start mb-4 md:mb-0 w-full md:w-auto">
+      <img
+        src="imagens/logo.png"
+        alt="Protepac Logo"
+        style="height: 110px; max-width: 90vw; width: auto; display: block"
+        class="mb-2"
+      />
+    </div>
+    <!-- Infos, encostadas na logo -->
+    <div class="flex flex-col justify-center w-full md:mt-2 md:ml-9">
+      <!-- Primeira linha: ENDEREÇO e EMAIL -->
+    <div class="flex flex-wrap items-center gold-text text-lg md:text-xl font-bold w-full justify-center mb-2">
+      <div class="flex items-center gap-3 mr-7">
+        <i class="fas fa-map-marker-alt" style="color: #ffd700"></i>
+        <span>Av. 1 Leste, 1020 sala 207, Teutônia/RS</span>
+      </div>
+      <span class="footer-info-divider mr-7 hidden md:inline"></span>
+      <div class="flex items-center gap-3">
+        <i class="fas fa-envelope" style="color: #ffd700"></i>
+        <span>financeiro@protepac.com.br</span>
+      </div>
+    </div>
+    <!-- Segunda linha: TELEFONE, CNPJ, DESDE -->
+    <div class="flex flex-wrap items-center gold-text text-lg md:text-xl font-bold w-full justify-center mb-2">
+      <div class="flex items-center gap-3 mr-7">
+        <i class="fas fa-phone-alt" style="color: #ffd700"></i>
+        <span>(51) 3762-2380</span>
+      </div>
+      <span class="footer-info-divider mr-7 hidden md:inline"></span>
+      <div class="flex items-center gap-3 mr-7">
+        <i class="fas fa-id-card" style="color: #ffd700"></i>
+        <span>13.778.034/0001-53</span>
+      </div>
+      <span class="footer-info-divider mr-7 hidden md:inline"></span>
+      <div class="flex items-center gap-3">
+        <i class="fas fa-calendar-alt" style="color: #ffd700"></i>
+        <span>Desde 2011</span>
+      </div>
+    </div>
+    <!-- Terceira linha: COPYRIGHT -->
+    <div class="flex w-full justify-center mt-2">
+      <p class="text-center" style="color: #ffd70099; font-size: 13px">
+        © Protepac Sistemas de Segurança Eletrônica – Todos os direitos reservados.
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const emailBtn = document.querySelector(".email-btn");
+        if (emailBtn) {
+          emailBtn.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-3px)";
+          });
+          emailBtn.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0)";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
