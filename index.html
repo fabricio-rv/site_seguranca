@@ -3,10 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Protepac Segurança Eletrônica em Teutônia | Proteção e Monitoramento</title>
-    <meta name="description" content="Protepac - Especialistas em segurança eletrônica, monitoramento 24h, alarmes e portaria virtual em Teutônia, Vale do Taquari e região. Proteção profissional para empresas e residências desde 2011.">
-    <meta name="keywords" content="Protepac, Segurança Eletrônica, Monitoramento, Alarmes, Portaria Virtual, Teutônia, Vale do Taquari, Lajeado, RS, Proteção, CFTV">
-    <meta name="author" content="Protepac Sistemas de Segurança Eletrônica">
+    <title>
+      Protepac Segurança Eletrônica em Teutônia | Proteção e Monitoramento
+    </title>
+    <meta
+      name="description"
+      content="Protepac - Especialistas em segurança eletrônica, monitoramento 24h, alarmes e portaria virtual em Teutônia, Vale do Taquari e região. Proteção profissional para empresas e residências desde 2011."
+    />
+    <meta
+      name="keywords"
+      content="Protepac, Segurança Eletrônica, Monitoramento, Alarmes, Portaria Virtual, Teutônia, Vale do Taquari, Lajeado, RS, Proteção, CFTV"
+    />
+    <meta name="author" content="Protepac Sistemas de Segurança Eletrônica" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
@@ -16,14 +24,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-
     <!-- FAVICON E ICONE DE APP -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" type="image/png" sizes="192x192" href="imagens/icon_logo.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="imagens/icon_logo.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="imagens/icon_logo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="imagens/icon_logo.png"
+    />
     <link rel="apple-touch-icon" href="imagens/icon_logo.png" />
     <link rel="manifest" href="manifest.json" />
-
     <style>
       body {
         font-family: "Montserrat", sans-serif;
@@ -97,6 +113,113 @@
       a:visited {
         color: #ffd700 !important;
       }
+      .logo-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+      }
+
+      .selo-container-mobile {
+        display: flex;
+        justify-content: center;
+        margin-left: 1rem;
+      }
+
+      @media (min-width: 768px) {
+        .logo-container {
+          display: block;
+        }
+
+        .selo-container-mobile {
+          display: none;
+        }
+      }
+
+      .selo-container-desktop {
+        display: none;
+      }
+
+      @media (min-width: 768px) {
+        .selo-container-desktop {
+          display: block;
+          position: absolute;
+          right: 5%;
+          top: 20%;
+        }
+      }
+
+      .selo {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(145deg, #ffd700, #ff9900);
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        border: 3px solid #ff9900;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @media (min-width: 768px) {
+        .selo {
+          width: 160px;
+          height: 160px;
+          border: 4px solid #ff9900;
+        }
+      }
+
+      .selo-numero {
+        font-size: 20px;
+        font-weight: 800;
+        color: #111132;
+        line-height: 1;
+      }
+
+      .selo-texto {
+        font-size: 12px;
+        font-weight: 700;
+        color: #111132;
+        margin-top: 3px;
+      }
+
+      @media (min-width: 768px) {
+        .selo-numero {
+          font-size: 32px;
+        }
+
+        .selo-texto {
+          font-size: 18px;
+          margin-top: 5px;
+        }
+      }
+
+      /* === FIX LINKS DE BOTÃO (não ficar amarelo após visitar) === */
+      a.email-btn,
+      a.email-btn:link,
+      a.email-btn:visited,
+      a.email-btn:active {
+        color: #111132 !important; /* mantém contraste nos botões dourados */
+      }
+      a.email-btn i {
+        /* ícone herda a cor do texto */
+        color: inherit !important;
+      }
     </style>
   </head>
   <body class="main-bg">
@@ -118,179 +241,242 @@
         <div
           class="md:w-3/4 mb-10 md:mb-0 md:pr-10 pl-8 sm:pl-14 lg:pl-20 xl:pl-28"
         >
-          <!-- LOGO NO TOPO (maior) -->
-          <div class="mb-6 pt-2 w-full flex justify-start">
+          <!-- LOGO NO TOPO com selo ao lado no mobile -->
+          <div class="logo-container">
             <img
               src="imagens/logo.png"
               alt="Protepac Logo"
-              class="max-w-[250px] w-full h-auto block"
+              class="max-w-[200px] w-full h-auto block"
               style="max-width: 60%; height: auto"
             />
+
+            <!-- Selo no mobile - ao lado da logo -->
+            <div class="selo-container-mobile">
+              <div class="selo">
+                <div class="selo-numero">+1000</div>
+                <div class="selo-texto">CLIENTES</div>
+              </div>
+            </div>
           </div>
-          <h1
-            class="text-4xl md:text-6xl font-bold mb-4 leading-tight gold-text"
-          >
-            Proteja o que mais importa com a tecnologia, confiança e tradição da Protepac!
-          </h1>
+
+          <!-- Texto principal -->
+          <div>
+            <h1
+              class="text-5xl md:text-6xl font-bold mb-2 leading-tight"
+              style="color: #ff9900"
+            >
+              Em quem você confia?
+            </h1>
+            <h2
+              class="text-3xl md:text-4xl font-bold mb-4 leading-tight gold-text"
+            >
+              Proteja o seu maior bem com o comprometimento, confiança,
+              transparência e tradição da Protepac!
+            </h2>
+          </div>
+
           <p class="block text-[#FF8C00] font-semibold text-xl mb-4">
-            Especialistas em segurança eletrônica desde 2011, com atendimento
-            ágil e soluções personalizadas para sua proteção. Atuamos no Vale do
-            Taquari e em outras 67 Cidades do Estado. A Protepac oferece soluções 
-            para seus problemas com Segurança.
+            Especialistas em segurança eletrônica desde 2011, com soluções
+            personalizadas para sua proteção. Atuamos no Vale do Taquari e mais
+            de 70 Cidades do Brasil. A Protepac oferece soluções para seus
+            problemas com Segurança.
           </p>
-          <!-- Botão agora alinhado à esquerda -->
+
+          <!-- Selo no desktop - posicionado absolutamente -->
+          <div class="selo-container-desktop">
+            <div class="selo">
+              <div class="selo-numero">+1000</div>
+              <div class="selo-texto">CLIENTES</div>
+            </div>
+          </div>
+
           <h2
             class="text-2xl font-bold mb-2 gold-text"
             style="text-align: left"
           >
-            Ficou com alguma dúvida sobre a Protepac?
-          </h2>
-          <h2
-            class="text-2xl font-bold mb-6 gold-text"
-            style="text-align: left"
-          >
-            Envie-nos um Email
+            Contate-nos
           </h2>
 
-          <!-- BOTÃO DE COPIAR EMAIL -->
-          <button
-            onclick="navigator.clipboard.writeText('financeiro@protepac.com.br'); 
-           this.innerHTML = `<i class='fas fa-check mr-2'></i> Copiado!`;
-           setTimeout(()=>this.innerHTML=`<i class='fas fa-envelope mr-2'></i> Copiar Email`,1500);"
-            class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg mb-2 w-max flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text"
-            style="text-decoration: none; outline: none; border: none"
+          <div
+            class="flex flex-col sm:flex-row gap-4 mt-4 sm:mt-2 mb-8 sm:mb-4"
           >
-            <i class="fas fa-envelope mr-2"></i> Copiar Email
-          </button>
+            <!-- Email: abre Gmail Compose (funciona no navegador); se quiser cliente local, trocar para mailto: -->
+            <a
+              href="https://mail.google.com/mail/?view=cm&to=comercial@protepac.com.br&su=Contato%20via%20Site%20Protepac&body=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+              target="_blank"
+              rel="noopener"
+              class="email-btn gold-bg email-btn midnight-text font-bold py-3 px-6 rounded-full text-lg w-max flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text"
+              style="text-decoration: none"
+            >
+              <i class="fas fa-envelope mr-2"></i> Enviar Email
+            </a>
+
+            <!-- WhatsApp: API oficial com número E.164 -->
+            <a
+              href="https://wa.me/5551999742261?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+              target="_blank"
+              rel="noopener"
+              class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg w-max flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text"
+              style="text-decoration: none"
+            >
+              <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- CARDS ABAIXO DO EMAIL - TAMANHO ORIGINAL RESTAURADO -->
+      <div class="w-full flex flex-col items-center relative z-10 mt-12">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-[1400px] mx-auto px-6"
+        >
+          <!-- Monitoramento -->
+          <div
+            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-14 md:px-16 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+          >
+            <div class="mb-4">
+              <i class="fas fa-shield-alt text-5xl" style="color: #ffd700"></i>
+            </div>
+            <h3
+              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+              style="color: #ffd700"
+            >
+              Monitoramento
+            </h3>
+          </div>
+
+          <!-- Alarme 24h -->
+          <div
+            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+          >
+            <div class="mb-4">
+              <i class="fas fa-bell text-5xl" style="color: #ffd700"></i>
+            </div>
+            <h3
+              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+              style="color: #ffd700"
+            >
+              Sistema de Alarme 24h
+            </h3>
+          </div>
+
+          <!-- Portaria Virtual -->
+          <div
+            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+          >
+            <div class="mb-4">
+              <i class="fas fa-door-open text-5xl" style="color: #ffd700"></i>
+            </div>
+            <h3
+              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+              style="color: #ffd700"
+            >
+              Portaria Virtual
+            </h3>
+          </div>
+
+          <!-- Controle de Acesso -->
+          <div
+            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+          >
+            <div class="mb-4">
+              <i class="fas fa-key text-5xl" style="color: #ffd700"></i>
+            </div>
+            <h3
+              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+              style="color: #ffd700"
+            >
+              Controle de Acesso
+            </h3>
+          </div>
+
+          <!-- Câmeras de Leitura Facial -->
+          <div
+            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+          >
+            <div class="mb-4">
+              <i class="fas fa-user-circle text-5xl" style="color: #ffd700"></i>
+            </div>
+            <h3
+              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+              style="color: #ffd700"
+            >
+              Câmeras de Leitura Facial
+            </h3>
+          </div>
+
+          <!-- Câmeras de Leitura de Placas Veiculares -->
+          <div
+            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+          >
+            <div class="mb-4">
+              <i class="fas fa-car text-5xl" style="color: #ffd700"></i>
+            </div>
+            <h3
+              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+              style="color: #ffd700"
+            >
+              Câmeras de Leitura de Placas
+            </h3>
+          </div>
+
+          <!-- Câmeras de Video Monitoramento -->
+          <div
+            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+          >
+            <div class="mb-4">
+              <i class="fas fa-video text-5xl" style="color: #ffd700"></i>
+            </div>
+            <h3
+              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+              style="color: #ffd700"
+            >
+              Câmeras de Video Monitoramento
+            </h3>
+          </div>
+
+          <!-- Câmeras de Leitura Térmica -->
+          <div
+            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+          >
+            <div class="mb-4">
+              <i
+                class="fas fa-thermometer-full text-5xl"
+                style="color: #ffd700"
+              ></i>
+            </div>
+            <h3
+              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+              style="color: #ffd700"
+            >
+              Câmeras de Leitura Térmica
+            </h3>
+          </div>
         </div>
       </div>
 
-      <!-- CARDS ABAIXO DO EMAIL -->
-<div class="w-full flex flex-col items-center relative z-10 mt-12">
-  <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-5 w-full max-w-7xl mx-auto"
-  >
-    <!-- Monitoramento -->
-    <div
-      class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-12 py-7 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-    >
-      <div class="mb-1">
-        <i class="fas fa-shield-alt text-5xl" style="color: #ffd700"></i>
-      </div>
-      <h3
-        class="text-2xl font-bold mb-2 text-center"
-        style="color: #ffd700"
-      >
-        Monitoramento
-      </h3>
-      <p class="text-center text-base" style="color: #ff9900">
-        Excelência em equipamentos para monitorar sua propriedade.
-      </p>
-    </div>
-    <!-- Alarme 24h -->
-    <div
-      class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-12 py-7 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-    >
-      <div class="mb-3">
-        <i class="fas fa-bell text-5xl" style="color: #ffd700"></i>
-      </div>
-      <h3
-        class="text-2xl font-bold mb-2 text-center"
-        style="color: #ffd700"
-      >
-        Sistema de Alarme 24h
-      </h3>
-      <p class="text-center text-base" style="color: #ff9900">
-        Alarmes modernos com monitoramento 24h e contato imediato.
-      </p>
-    </div>
-    <!-- Portaria Virtual -->
-    <div
-      class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-12 py-7 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-    >
-      <div class="mb-3">
-        <i class="fas fa-door-open text-5xl" style="color: #ffd700"></i>
-      </div>
-      <h3
-        class="text-2xl font-bold mb-2 text-center"
-        style="color: #ffd700"
-      >
-        Portaria Virtual
-      </h3>
-      <p class="text-center text-base" style="color: #ff9900">
-        Portaria digital que conecta moradores, visitantes e prestadores, facilitando o acesso seguro e eficiente.
-      </p>
-    </div>
-    <!-- NOVO CARD - Controle de Acesso -->
-    <div
-      class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-12 py-7 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-    >
-      <div class="mb-3">
-        <i class="fas fa-key text-5xl" style="color: #ffd700"></i>
-      </div>
-      <h3
-        class="text-2xl font-bold mb-2 text-center"
-        style="color: #ffd700"
-      >
-        Controle de Acesso
-      </h3>
-      <p class="text-center text-base" style="color: #ff9900">
-        Controle de acesso residencial e comercial com tecnologia de ponta.
-      </p>
-    </div>
-    <!-- Clientes Atendidos -->
-    <div
-      class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-12 py-7 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-    >
-      <div class="mb-3">
-        <i class="fas fa-users text-5xl" style="color: #ffd700"></i>
-      </div>
-      <h3
-        class="text-2xl font-bold mb-2 text-center"
-        style="color: #ffd700"
-      >
-        +1000 Clientes
-      </h3>
-      <p class="text-center text-base" style="color: #ff9900">
-        Atendendo com excelência e confiança em todo o Brasil.
-      </p>
-    </div>
-  </div>
-</div>
-
+      <!-- Seção "Quer trabalhar conosco?" -->
       <div class="w-full max-w-4xl mx-auto mt-16 mb-1 px-4 relative z-10">
         <h2 class="text-3xl font-bold gold-text mb-6 text-center">
-          Perguntas Frequentes
+          Quer trabalhar conosco?
         </h2>
-        <div class="space-y-4">
-          <div class="bg-[#111132] border-2 border-[#FFD700] rounded-xl p-5">
-            <h3 class="font-bold gold-text text-lg mb-4">
-              Como funciona o monitoramento 24h da Protepac?
-            </h3>
-            <p class="text-base text-[#FF9900]">
-              Nossa central monitora seu sistema o tempo todo. Ao detectar
-              qualquer evento, nossa equipe age rapidamente, entrando em contato
-              e tomando as providências necessárias.
-            </p>
-          </div>
-          <div class="bg-[#111132] border-2 border-[#FFD700] rounded-xl p-5">
-            <h3 class="font-bold gold-text text-lg mb-4">
-              A Protepac oferece suporte técnico após a instalação?
-            </h3>
-            <p class="text-base text-[#FF9900]">
-              Sim! Nosso suporte está disponível para dúvidas, manutenção e
-              eventuais ajustes no sistema a qualquer momento.
-            </p>
-          </div>
-          <div class="bg-[#111132] border-2 border-[#FFD700] rounded-xl p-5">
-            <h3 class="font-bold gold-text text-lg mb-4">
-              Quais regiões a Protepac atende?
-            </h3>
-            <p class="text-base text-[#FF9900]">
-              Atuamos no Vale do Taquari, Teutônia, Lajeado e mais de 67 cidades
-              do estado do RS, desde 2011.
-            </p>
-          </div>
+
+        <p
+          class="text-center text-xl font-semibold mb-6"
+          style="color: #ff9900"
+        >
+          Junte-se à nossa equipe de especialistas em segurança eletrônica
+        </p>
+
+        <div class="text-center">
+          <a
+            href="https://mail.google.com/mail/?view=cm&to=comercial@protepac.com.br&su=Contato%20via%20Site%20Protepac&body=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+            target="_blank"
+            rel="noopener"
+            class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg inline-flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text"
+            style="text-decoration: none"
+          >
+            <i class="fas fa-envelope mr-2"></i> Envie seu currículo
+          </a>
         </div>
       </div>
     </section>
@@ -310,6 +496,7 @@
             class="mb-2"
           />
         </div>
+
         <!-- Infos, encostadas na logo -->
         <div class="flex flex-col justify-center w-full md:mt-2 md:ml-9">
           <!-- Primeira linha: ENDEREÇO e EMAIL -->
@@ -323,9 +510,10 @@
             <span class="footer-info-divider mr-7 hidden md:inline"></span>
             <div class="flex items-center gap-3">
               <i class="fas fa-envelope" style="color: #ffd700"></i>
-              <span>financeiro@protepac.com.br</span>
+              <span>comercial@protepac.com.br</span>
             </div>
           </div>
+
           <!-- Segunda linha: TELEFONE, CNPJ, DESDE -->
           <div
             class="flex flex-wrap items-center gold-text text-lg md:text-xl font-bold w-full justify-center mb-2"
@@ -335,16 +523,20 @@
               <span>(51) 3762-2380</span>
             </div>
             <span class="footer-info-divider mr-7 hidden md:inline"></span>
+
+            <!-- WhatsApp -->
             <div class="flex items-center gap-3 mr-7">
-              <i class="fas fa-id-card" style="color: #ffd700"></i>
-              <span>13.778.034/0001-53</span>
+              <i class="fab fa-whatsapp" style="color: #ffd700"></i>
+              <span>(51) 99631-1566</span>
             </div>
+
             <span class="footer-info-divider mr-7 hidden md:inline"></span>
             <div class="flex items-center gap-3">
               <i class="fas fa-calendar-alt" style="color: #ffd700"></i>
               <span>Desde 2011</span>
             </div>
           </div>
+
           <!-- Terceira linha: COPYRIGHT -->
           <div class="flex w-full justify-center mt-4">
             <p class="text-center" style="color: #ffd70099; font-size: 13px">
