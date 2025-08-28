@@ -563,14 +563,13 @@
         }
       });
     </script>
-
     <script>
       (function () {
         const email = "comercial@protepac.com.br";
         const subjectContato = "Contato via Site Protepac";
-        const subjectCurriculo = "Envio de Currículo via Site Protepac";
-        const bodyContato = "Olá, acessei o site da Protepac e gostaria de mais informações.";
-        const bodyCurriculo = "Olá, acessei o site da Protepac e segue meu currículo em anexo.";
+        const subjectCurriculo = "Envio de Currículo - Site Protepac";
+        const bodyContato = "Olá, gostaria de mais informações.";
+        const bodyCurriculo = "Olá, segue meu currículo em anexo.";
 
         const gmailContato =
           "https://mail.google.com/mail/?view=cm&to=" +
@@ -604,34 +603,32 @@
           "&body=" +
           encodeURIComponent(bodyCurriculo);
 
-        const isMobile =
-          /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
-            navigator.userAgent
-          );
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-        // Botão "Enviar Email"
-        const btnEmail = document.getElementById("btn-email");
-        if (btnEmail) {
+        function setupButton(id, gmailURL, mailtoURL) {
+          const btn = document.getElementById(id);
+          if (!btn) return;
+
           if (isMobile) {
-            btnEmail.href = mailtoContato;
-            btnEmail.removeAttribute("target");
+            // Tenta Gmail primeiro
+            btn.onclick = function (e) {
+              e.preventDefault();
+              // tenta abrir gmail
+              window.location.href = gmailURL;
+              // fallback após 1.5s se não abrir Gmail
+              setTimeout(() => {
+                window.location.href = mailtoURL;
+              }, 1500);
+            };
           } else {
-            btnEmail.href = gmailContato;
-            btnEmail.target = "_blank";
+            // Desktop → direto no Gmail Web
+            btn.href = gmailURL;
+            btn.target = "_blank";
           }
         }
 
-        // Botão "Envie seu currículo"
-        const btnCurriculo = document.getElementById("btn-curriculo");
-        if (btnCurriculo) {
-          if (isMobile) {
-            btnCurriculo.href = mailtoCurriculo;
-            btnCurriculo.removeAttribute("target");
-          } else {
-            btnCurriculo.href = gmailCurriculo;
-            btnCurriculo.target = "_blank";
-          }
-        }
+        setupButton("btn-email", gmailContato, mailtoContato);
+        setupButton("btn-curriculo", gmailCurriculo, mailtoCurriculo);
       })();
     </script>
   </body>
