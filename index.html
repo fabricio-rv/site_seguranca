@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
     <title>
       Protepac Segurança Eletrônica em Teutônia | Proteção e Monitoramento
     </title>
@@ -392,297 +395,339 @@
           animation: none !important;
         }
       }
+      /* A11y: skip to content */
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 8px;
+        background: #ffd700;
+        color: #111132;
+        padding: 0.5rem 0.75rem;
+        border-radius: 9999px;
+        font-weight: 700;
+        z-index: 50;
+      }
+      .skip-link:focus {
+        left: 12px;
+        outline: 3px solid #ff9900; /* por que: foco visível */
+      }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-67XV77PS23"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-67XV77PS23");
+    </script>
   </head>
   <body class="main-bg">
-    <section
-      class="py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden pb-5 main-bg"
-    >
-      <!-- Filtro preto escuro sobre a imagem de fundo -->
-      <div class="absolute inset-0 z-0">
-        <img src="imagens/seguranca.png" alt="" aria-hidden="true" class="w-full
-        h-full object-cover" / fetchpriority="high">
-        <div class="absolute inset-0 bg-black opacity-80"></div>
-      </div>
-      <div
-        class="container mx-auto flex flex-col md:flex-row items-start relative z-10 h-full pt-6"
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <main id="conteudo" role="main" tabindex="-1">
+      <section
+        class="py-12 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden pb-5 main-bg"
       >
+        <!-- Filtro preto escuro sobre a imagem de fundo -->
+        <div class="absolute inset-0 z-0">
+          <img
+            src="imagens/seguranca.png"
+            alt=""
+            aria-hidden="true"
+            class="w-full h-full object-cover"
+            fetchpriority="high"
+            width="1920"
+            height="1080"
+          />
+          <div class="absolute inset-0 bg-black opacity-80"></div>
+        </div>
         <div
-          class="hero-wrap md:w-3/4 mb-10 md:mb-0 md:pr-10 px-6 lg:pl-20 xl:pl-28"
+          class="container mx-auto flex flex-col md:flex-row items-start relative z-10 h-full pt-6"
         >
-          <!-- LOGO NO TOPO com selo ao lado no mobile -->
-          <div class="logo-container">
-            <img
-              src="imagens/logo.png"
-              alt="Protepac Logo"
-              class="max-w-[200px] w-full h-auto block"
-              style="max-width: 60%; height: auto"
-            />
+          <div
+            class="hero-wrap md:w-3/4 mb-10 md:mb-0 md:pr-10 px-6 lg:pl-20 xl:pl-28"
+          >
+            <!-- LOGO NO TOPO com selo ao lado no mobile -->
+            <div class="logo-container">
+              <img
+                src="imagens/logo.png"
+                alt="Protepac Logo"
+                class="max-w-[200px] w-full h-auto block"
+                style="max-width: 60%; height: auto"
+                width="600"
+                height="300"
+              />
 
-            <!-- Selo no mobile - ao lado da logo -->
-            <div class="selo-container-mobile">
+              <!-- Selo no mobile - ao lado da logo -->
+              <div class="selo-container-mobile">
+                <div class="selo">
+                  <div class="selo-numero">+1000</div>
+                  <div class="selo-texto">CLIENTES</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Texto principal -->
+            <div>
+              <h1
+                class="text-5xl md:text-6xl font-bold mb-2 leading-tight"
+                style="color: #ff9900"
+              >
+                Em quem você confia?
+              </h1>
+              <h2
+                class="text-3xl md:text-4xl font-bold mb-4 leading-tight gold-text"
+              >
+                Proteja o seu maior bem com o comprometimento, confiança,
+                transparência e tradição da Protepac!
+              </h2>
+            </div>
+
+            <p class="block text-[#FF8C00] font-semibold text-xl mb-4">
+              Especialistas em segurança eletrônica desde 2011, com soluções
+              personalizadas para sua proteção. Atuamos no Vale do Taquari e em
+              mais de 70 cidades do Brasil. A Protepac oferece soluções para
+              seus problemas de segurança.
+            </p>
+
+            <!-- Selo no desktop - posicionado absolutamente -->
+            <div class="selo-container-desktop">
               <div class="selo">
                 <div class="selo-numero">+1000</div>
                 <div class="selo-texto">CLIENTES</div>
               </div>
             </div>
-          </div>
 
-          <!-- Texto principal -->
-          <div>
-            <h1
-              class="text-5xl md:text-6xl font-bold mb-2 leading-tight"
-              style="color: #ff9900"
-            >
-              Em quem você confia?
-            </h1>
             <h2
-              class="text-3xl md:text-4xl font-bold mb-4 leading-tight gold-text"
+              class="text-2xl font-bold mb-2 gold-text"
+              style="text-align: left"
             >
-              Proteja o seu maior bem com o comprometimento, confiança,
-              transparência e tradição da Protepac!
+              Contate-nos
             </h2>
-          </div>
 
-          <p class="block text-[#FF8C00] font-semibold text-xl mb-4">
-            Especialistas em segurança eletrônica desde 2011, com soluções
-            personalizadas para sua proteção. Atuamos no Vale do Taquari e em
-            mais de 70 cidades do Brasil. A Protepac oferece soluções para seus
-            problemas de segurança.
-          </p>
+            <div
+              class="flex flex-col items-center sm:flex-row sm:items-start gap-4 mt-6 sm:mt-4 mb-4 sm:mb-2 cta-wrap"
+            >
+              <!-- Email: abre Gmail Compose (funciona no navegador) -->
+              <a
+                id="btn-email"
+                href="#"
+                aria-label="Enviar e-mail para a Protepac"
+                class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg w-max inline-flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text focus:outline-none focus:ring-2 focus:ring-[#FFD700] focus:ring-offset-2 focus:ring-offset-[#111132]"
+                style="text-decoration: none"
+              >
+                <i class="fas fa-envelope mr-2" aria-hidden="true"></i> Enviar
+                Email
+              </a>
 
-          <!-- Selo no desktop - posicionado absolutamente -->
-          <div class="selo-container-desktop">
-            <div class="selo">
-              <div class="selo-numero">+1000</div>
-              <div class="selo-texto">CLIENTES</div>
+              <!-- WhatsApp: API oficial com número E.164 -->
+              <a
+                href="https://wa.me/5551999742261?text=Ol%C3%A1%2C%20acessei%20o%20site%20da%20Protepac%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Conversar no WhatsApp da Protepac"
+                class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg w-max flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text focus:outline-none focus:ring-2 focus:ring-[#FFD700] focus:ring-offset-2 focus:ring-offset-[#111132]"
+                style="text-decoration: none"
+              >
+                <i class="fab fa-whatsapp mr-2" aria-hidden="true"></i> WhatsApp
+              </a>
             </div>
           </div>
-
-          <h2
-            class="text-2xl font-bold mb-2 gold-text"
-            style="text-align: left"
+        </div>
+        <!-- CARDS ABAIXO DO EMAIL - TAMANHO ORIGINAL RESTAURADO -->
+        <div
+          class="w-full flex flex-col items-center relative z-10 mt-10 cards-wrap"
+        >
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-[1400px] mx-auto px-6"
           >
-            Contate-nos
+            <!-- Monitoramento -->
+            <div
+              class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-14 md:px-16 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+            >
+              <div class="mb-4">
+                <i
+                  class="fas fa-shield-alt text-5xl"
+                  style="color: #ffd700"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <h3
+                class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+                style="color: #ffd700"
+              >
+                Monitoramento
+              </h3>
+            </div>
+
+            <!-- Alarme 24h -->
+            <div
+              class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+            >
+              <div class="mb-4">
+                <i
+                  class="fas fa-bell text-5xl"
+                  style="color: #ffd700"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <h3
+                class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+                style="color: #ffd700"
+              >
+                Sistema de Alarme 24h
+              </h3>
+            </div>
+
+            <!-- Portaria Virtual -->
+            <div
+              class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+            >
+              <div class="mb-4">
+                <i
+                  class="fas fa-door-open text-5xl"
+                  style="color: #ffd700"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <h3
+                class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+                style="color: #ffd700"
+              >
+                Portaria Virtual
+              </h3>
+            </div>
+
+            <!-- Controle de Acesso -->
+            <div
+              class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+            >
+              <div class="mb-4">
+                <i
+                  class="fas fa-key text-5xl"
+                  style="color: #ffd700"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <h3
+                class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+                style="color: #ffd700"
+              >
+                Controle de Acesso
+              </h3>
+            </div>
+
+            <!-- Câmeras de Leitura Facial -->
+            <div
+              class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+            >
+              <div class="mb-4">
+                <i
+                  class="fas fa-user-circle text-5xl"
+                  style="color: #ffd700"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <h3
+                class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+                style="color: #ffd700"
+              >
+                Câmeras de Leitura Facial
+              </h3>
+            </div>
+
+            <!-- Câmeras de Leitura de Placas Veiculares -->
+            <div
+              class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+            >
+              <div class="mb-4">
+                <i
+                  class="fas fa-car text-5xl"
+                  style="color: #ffd700"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <h3
+                class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+                style="color: #ffd700"
+              >
+                Câmeras de Leitura de Placas
+              </h3>
+            </div>
+
+            <!-- Câmeras de Vídeo Monitoramento -->
+            <div
+              class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+            >
+              <div class="mb-4">
+                <i
+                  class="fas fa-video text-5xl"
+                  style="color: #ffd700"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <h3
+                class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+                style="color: #ffd700"
+              >
+                Câmeras de Vídeo Monitoramento
+              </h3>
+            </div>
+
+            <!-- Câmeras de Leitura Térmica -->
+            <div
+              class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
+            >
+              <div class="mb-4">
+                <i
+                  class="fas fa-thermometer-full text-5xl"
+                  style="color: #ffd700"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <h3
+                class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
+                style="color: #ffd700"
+              >
+                Câmeras de Leitura Térmica
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção "Quer trabalhar conosco?" -->
+        <div class="w-full max-w-4xl mx-auto mt-16 mb-1 px-4 relative z-10">
+          <h2 class="text-3xl font-bold gold-text mb-6 text-center">
+            Quer trabalhar conosco?
           </h2>
 
-          <div
-            class="flex flex-col items-center sm:flex-row sm:items-start gap-4 mt-6 sm:mt-4 mb-4 sm:mb-2 cta-wrap"
+          <p
+            class="text-center text-xl font-semibold mb-6"
+            style="color: #ff9900"
           >
-            <!-- Email: abre Gmail Compose (funciona no navegador) -->
+            Junte-se à nossa equipe de especialistas em segurança eletrônica
+          </p>
+
+          <div class="text-center">
             <a
-              id="btn-email"
+              id="btn-curriculo"
               href="#"
-              aria-label="Enviar e-mail para a Protepac"
-              class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg w-max inline-flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text focus:outline-none focus:ring-2 focus:ring-[#FFD700] focus:ring-offset-2 focus:ring-offset-[#111132]"
+              aria-label="Enviar currículo por e-mail para a Protepac"
+              class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg inline-flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text focus:outline-none focus:ring-2 focus:ring-[#FFD700] focus:ring-offset-2 focus:ring-offset-[#111132]"
               style="text-decoration: none"
             >
-              <i class="fas fa-envelope mr-2" aria-hidden="true"></i> Enviar
-              Email
-            </a>
-
-            <!-- WhatsApp: API oficial com número E.164 -->
-            <a
-              href="https://wa.me/5551999742261?text=Ol%C3%A1%2C%20acessei%20o%20site%20da%20Protepac%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Conversar no WhatsApp da Protepac"
-              class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg w-max flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text focus:outline-none focus:ring-2 focus:ring-[#FFD700] focus:ring-offset-2 focus:ring-offset-[#111132]"
-              style="text-decoration: none"
-            >
-              <i class="fab fa-whatsapp mr-2" aria-hidden="true"></i> WhatsApp
+              <i class="fas fa-envelope mr-2" aria-hidden="true"></i> Envie seu
+              currículo
             </a>
           </div>
         </div>
-      </div>
-      <!-- CARDS ABAIXO DO EMAIL - TAMANHO ORIGINAL RESTAURADO -->
-      <div
-        class="w-full flex flex-col items-center relative z-10 mt-10 cards-wrap"
-      >
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-[1400px] mx-auto px-6"
-        >
-          <!-- Monitoramento -->
-          <div
-            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-14 md:px-16 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-          >
-            <div class="mb-4">
-              <i
-                class="fas fa-shield-alt text-5xl"
-                style="color: #ffd700"
-                aria-hidden="true"
-              ></i>
-            </div>
-            <h3
-              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
-              style="color: #ffd700"
-            >
-              Monitoramento
-            </h3>
-          </div>
-
-          <!-- Alarme 24h -->
-          <div
-            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-          >
-            <div class="mb-4">
-              <i
-                class="fas fa-bell text-5xl"
-                style="color: #ffd700"
-                aria-hidden="true"
-              ></i>
-            </div>
-            <h3
-              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
-              style="color: #ffd700"
-            >
-              Sistema de Alarme 24h
-            </h3>
-          </div>
-
-          <!-- Portaria Virtual -->
-          <div
-            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-          >
-            <div class="mb-4">
-              <i
-                class="fas fa-door-open text-5xl"
-                style="color: #ffd700"
-                aria-hidden="true"
-              ></i>
-            </div>
-            <h3
-              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
-              style="color: #ffd700"
-            >
-              Portaria Virtual
-            </h3>
-          </div>
-
-          <!-- Controle de Acesso -->
-          <div
-            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-          >
-            <div class="mb-4">
-              <i
-                class="fas fa-key text-5xl"
-                style="color: #ffd700"
-                aria-hidden="true"
-              ></i>
-            </div>
-            <h3
-              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
-              style="color: #ffd700"
-            >
-              Controle de Acesso
-            </h3>
-          </div>
-
-          <!-- Câmeras de Leitura Facial -->
-          <div
-            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-          >
-            <div class="mb-4">
-              <i
-                class="fas fa-user-circle text-5xl"
-                style="color: #ffd700"
-                aria-hidden="true"
-              ></i>
-            </div>
-            <h3
-              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
-              style="color: #ffd700"
-            >
-              Câmeras de Leitura Facial
-            </h3>
-          </div>
-
-          <!-- Câmeras de Leitura de Placas Veiculares -->
-          <div
-            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-          >
-            <div class="mb-4">
-              <i
-                class="fas fa-car text-5xl"
-                style="color: #ffd700"
-                aria-hidden="true"
-              ></i>
-            </div>
-            <h3
-              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
-              style="color: #ffd700"
-            >
-              Câmeras de Leitura de Placas
-            </h3>
-          </div>
-
-          <!-- Câmeras de Vídeo Monitoramento -->
-          <div
-            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-          >
-            <div class="mb-4">
-              <i
-                class="fas fa-video text-5xl"
-                style="color: #ffd700"
-                aria-hidden="true"
-              ></i>
-            </div>
-            <h3
-              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
-              style="color: #ffd700"
-            >
-              Câmeras de Vídeo Monitoramento
-            </h3>
-          </div>
-
-          <!-- Câmeras de Leitura Térmica -->
-          <div
-            class="bg-[#111132] border-2 border-[#FFD700] rounded-2xl flex flex-col items-center justify-center px-8 py-8 transition-all duration-300 shadow-md hover:border-[#FF9900] hover:-translate-y-2 group cursor-pointer"
-          >
-            <div class="mb-4">
-              <i
-                class="fas fa-thermometer-full text-5xl"
-                style="color: #ffd700"
-                aria-hidden="true"
-              ></i>
-            </div>
-            <h3
-              class="text-xl md:text-[22px] font-bold text-center leading-tight break-words"
-              style="color: #ffd700"
-            >
-              Câmeras de Leitura Térmica
-            </h3>
-          </div>
-        </div>
-      </div>
-
-      <!-- Seção "Quer trabalhar conosco?" -->
-      <div class="w-full max-w-4xl mx-auto mt-16 mb-1 px-4 relative z-10">
-        <h2 class="text-3xl font-bold gold-text mb-6 text-center">
-          Quer trabalhar conosco?
-        </h2>
-
-        <p
-          class="text-center text-xl font-semibold mb-6"
-          style="color: #ff9900"
-        >
-          Junte-se à nossa equipe de especialistas em segurança eletrônica
-        </p>
-
-        <div class="text-center">
-          <a
-            id="btn-curriculo"
-            href="#"
-            aria-label="Enviar currículo por e-mail para a Protepac"
-            class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg inline-flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text focus:outline-none focus:ring-2 focus:ring-[#FFD700] focus:ring-offset-2 focus:ring-offset-[#111132]"
-            style="text-decoration: none"
-          >
-            <i class="fas fa-envelope mr-2" aria-hidden="true"></i> Envie seu
-            currículo
-          </a>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <footer class="bg-black footer-divider py-4 px-4 sm:px-8 mt-0">
       <div
@@ -756,7 +801,7 @@
             </a>
             <span class="footer-info-divider mr-7 hidden md:inline"></span>
             <a
-              href="https://wa.me/5551996311566"
+              href="https://wa.me/5551996311566?text=Ol%C3%A1%2C%20acessei%20o%20site%20da%20Protepac%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
               target="_blank"
               rel="noopener noreferrer"
               class="info-row flex items-center gap-3 mr-7 no-underline focus:outline-none focus:ring-2 focus:ring-[#FFD700] focus:ring-offset-2 focus:ring-offset-black"
