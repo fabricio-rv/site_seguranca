@@ -304,9 +304,7 @@
             <a
               id="btn-email"
               href="#"
-              target="_blank"
-              rel="noopener"
-              class="email-btn gold-bg email-btn midnight-text font-bold py-3 px-6 rounded-full text-lg w-max flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text"
+              class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg w-max inline-flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text"
               style="text-decoration: none"
             >
               <i class="fas fa-envelope mr-2"></i> Enviar Email
@@ -472,8 +470,6 @@
           <a
             id="btn-curriculo"
             href="#"
-            target="_blank"
-            rel="noopener"
             class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg inline-flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text"
             style="text-decoration: none"
           >
@@ -565,70 +561,123 @@
     </script>
     <script>
       (function () {
-        const email = "comercial@protepac.com.br";
-        const subjectContato = "Contato via Site Protepac";
-        const subjectCurriculo = "Envio de Currículo - Site Protepac";
-        const bodyContato = "Olá, gostaria de mais informações.";
-        const bodyCurriculo = "Olá, segue meu currículo em anexo.";
+        const TO = "comercial@protepac.com.br";
 
-        const gmailContato =
-          "https://mail.google.com/mail/?view=cm&to=" +
-          encodeURIComponent(email) +
-          "&su=" +
-          encodeURIComponent(subjectContato) +
-          "&body=" +
-          encodeURIComponent(bodyContato);
+        const EMAILS = {
+          contato: {
+            subject: "Contato - Site Protepac",
+            body: "Olá, acessei o site da Protepac e gostaria de mais informações.",
+          },
+          curriculo: {
+            subject: "Envio de Currículo - Site Protepac",
+            body: "Olá, acessei o site da Protepac e segue meu currículo em anexo.",
+          },
+        };
 
-        const gmailCurriculo =
-          "https://mail.google.com/mail/?view=cm&to=" +
-          encodeURIComponent(email) +
-          "&su=" +
-          encodeURIComponent(subjectCurriculo) +
-          "&body=" +
-          encodeURIComponent(bodyCurriculo);
+        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        const isMobile = isIOS || isAndroid;
 
-        const mailtoContato =
-          "mailto:" +
-          email +
-          "?subject=" +
-          encodeURIComponent(subjectContato) +
-          "&body=" +
-          encodeURIComponent(bodyContato);
-
-        const mailtoCurriculo =
-          "mailto:" +
-          email +
-          "?subject=" +
-          encodeURIComponent(subjectCurriculo) +
-          "&body=" +
-          encodeURIComponent(bodyCurriculo);
-
-        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-        function setupButton(id, gmailURL, mailtoURL) {
-          const btn = document.getElementById(id);
-          if (!btn) return;
-
-          if (isMobile) {
-            // Tenta Gmail primeiro
-            btn.onclick = function (e) {
-              e.preventDefault();
-              // tenta abrir gmail
-              window.location.href = gmailURL;
-              // fallback após 1.5s se não abrir Gmail
-              setTimeout(() => {
-                window.location.href = mailtoURL;
-              }, 1500);
-            };
-          } else {
-            // Desktop → direto no Gmail Web
-            btn.href = gmailURL;
-            btn.target = "_blank";
-          }
+        function buildGmailWeb(to, subject, body) {
+          return (
+            "https://mail.google.com/mail/?view=cm&to=" +
+            encodeURIComponent(to) +
+            "&su=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(body)
+          );
         }
 
-        setupButton("btn-email", gmailContato, mailtoContato);
-        setupButton("btn-curriculo", gmailCurriculo, mailtoCurriculo);
+        // iOS: tenta abrir app Gmail; fallback para Apple Mail (mailto)
+        function openIOS(to, subject, body) {
+          const gmailApp =
+            "googlegmail://co?to=" +
+            encodeURIComponent(to) +
+            "&subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(body);
+
+          const mailto =
+            "mailto:" +
+            to +
+            "?subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(body);
+
+          // tenta Gmail app
+          window.location.href = gmailApp;
+          // fallback se não tiver o app
+          setTimeout(() => {
+            window.location.href = mailto;
+          }, 800);
+        }
+
+        // Android: tenta Intent do Gmail; fallback para mailto
+        function openAndroid(to, subject, body) {
+          const gmailIntent =
+            "intent://compose?to=" +
+            encodeURIComponent(to) +
+            "&subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(body) +
+            "#Intent;scheme=mailto;package=com.google.android.gm;end";
+
+          const mailto =
+            "mailto:" +
+            to +
+            "?subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(body);
+
+          // tenta Gmail app via intent
+          window.location.href = gmailIntent;
+          // fallback para app padrão
+          setTimeout(() => {
+            window.location.href = mailto;
+          }, 800);
+        }
+
+        function wireButton(btnId, kind) {
+          const btn = document.getElementById(btnId);
+          if (!btn) return;
+
+          const { subject, body } = EMAILS[kind];
+
+          if (!isMobile) {
+            // Desktop → Gmail Web
+            btn.href = buildGmailWeb(TO, subject, body);
+            btn.target = "_blank";
+            return;
+          }
+
+          // Mobile → tenta app Gmail, fallback para cliente padrão
+          btn.removeAttribute("target");
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (isIOS) {
+              openIOS(TO, subject, body);
+            } else if (isAndroid) {
+              openAndroid(TO, subject, body);
+            } else {
+              // fallback genérico mobile
+              window.location.href =
+                "mailto:" +
+                TO +
+                "?subject=" +
+                encodeURIComponent(subject) +
+                "&body=" +
+                encodeURIComponent(body);
+            }
+          });
+        }
+
+        wireButton("btn-email", "contato");
+        wireButton("btn-curriculo", "curriculo");
       })();
     </script>
   </body>
