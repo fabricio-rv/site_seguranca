@@ -599,20 +599,8 @@
             "&body=" +
             encodeURIComponent(body);
 
-          const mailto =
-            "mailto:" +
-            to +
-            "?subject=" +
-            encodeURIComponent(subject) +
-            "&body=" +
-            encodeURIComponent(body);
-
-          // tenta Gmail app
+          // só abre o Gmail app, sem fallback
           window.location.href = gmailApp;
-          // fallback se não tiver o app
-          setTimeout(() => {
-            window.location.href = mailto;
-          }, 800);
         }
 
         // Android: tenta Intent do Gmail; fallback para mailto
