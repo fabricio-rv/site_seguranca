@@ -298,11 +298,12 @@
           </h2>
 
           <div
-            class="flex flex-col sm:flex-row gap-4 mt-4 sm:mt-2 mb-8 sm:mb-4"
+            class="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-4 mb-4 sm:mb-2"
           >
             <!-- Email: abre Gmail Compose (funciona no navegador); se quiser cliente local, trocar para mailto: -->
             <a
-              href="https://mail.google.com/mail/?view=cm&to=comercial@protepac.com.br&su=Contato%20via%20Site%20Protepac&body=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+              id="btn-email"
+              href="#"
               target="_blank"
               rel="noopener"
               class="email-btn gold-bg email-btn midnight-text font-bold py-3 px-6 rounded-full text-lg w-max flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text"
@@ -313,7 +314,7 @@
 
             <!-- WhatsApp: API oficial com número E.164 -->
             <a
-              href="https://wa.me/5551999742261?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+              href="https://wa.me/5551999742261?text=Ol%C3%A1%2C%20acessei%20o%20site%20da%20Protepac%20e%20gostaria%20de%20mais%20informações."
               target="_blank"
               rel="noopener"
               class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg w-max flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text"
@@ -325,7 +326,7 @@
         </div>
       </div>
       <!-- CARDS ABAIXO DO EMAIL - TAMANHO ORIGINAL RESTAURADO -->
-      <div class="w-full flex flex-col items-center relative z-10 mt-12">
+      <div class="w-full flex flex-col items-center relative z-10 mt-10">
         <div
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-[1400px] mx-auto px-6"
         >
@@ -469,7 +470,8 @@
 
         <div class="text-center">
           <a
-            href="https://mail.google.com/mail/?view=cm&to=comercial@protepac.com.br&su=Contato%20via%20Site%20Protepac&body=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+            id="btn-curriculo"
+            href="#"
             target="_blank"
             rel="noopener"
             class="email-btn gold-bg midnight-text font-bold py-3 px-6 rounded-full text-lg inline-flex items-center justify-center shadow-lg transition-all duration-300 hover:darkorange-bg hover:gold-text"
@@ -560,6 +562,77 @@
           });
         }
       });
+    </script>
+
+    <script>
+      (function () {
+        const email = "comercial@protepac.com.br";
+        const subjectContato = "Contato via Site Protepac";
+        const subjectCurriculo = "Envio de Currículo via Site Protepac";
+        const bodyContato = "Olá, acessei o site da Protepac e gostaria de mais informações.";
+        const bodyCurriculo = "Olá, acessei o site da Protepac e segue meu currículo em anexo.";
+
+        const gmailContato =
+          "https://mail.google.com/mail/?view=cm&to=" +
+          encodeURIComponent(email) +
+          "&su=" +
+          encodeURIComponent(subjectContato) +
+          "&body=" +
+          encodeURIComponent(bodyContato);
+
+        const gmailCurriculo =
+          "https://mail.google.com/mail/?view=cm&to=" +
+          encodeURIComponent(email) +
+          "&su=" +
+          encodeURIComponent(subjectCurriculo) +
+          "&body=" +
+          encodeURIComponent(bodyCurriculo);
+
+        const mailtoContato =
+          "mailto:" +
+          email +
+          "?subject=" +
+          encodeURIComponent(subjectContato) +
+          "&body=" +
+          encodeURIComponent(bodyContato);
+
+        const mailtoCurriculo =
+          "mailto:" +
+          email +
+          "?subject=" +
+          encodeURIComponent(subjectCurriculo) +
+          "&body=" +
+          encodeURIComponent(bodyCurriculo);
+
+        const isMobile =
+          /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+            navigator.userAgent
+          );
+
+        // Botão "Enviar Email"
+        const btnEmail = document.getElementById("btn-email");
+        if (btnEmail) {
+          if (isMobile) {
+            btnEmail.href = mailtoContato;
+            btnEmail.removeAttribute("target");
+          } else {
+            btnEmail.href = gmailContato;
+            btnEmail.target = "_blank";
+          }
+        }
+
+        // Botão "Envie seu currículo"
+        const btnCurriculo = document.getElementById("btn-curriculo");
+        if (btnCurriculo) {
+          if (isMobile) {
+            btnCurriculo.href = mailtoCurriculo;
+            btnCurriculo.removeAttribute("target");
+          } else {
+            btnCurriculo.href = gmailCurriculo;
+            btnCurriculo.target = "_blank";
+          }
+        }
+      })();
     </script>
   </body>
 </html>
